@@ -2,7 +2,8 @@
 
 ## Introduction
 
-"CloudScore Analytics: GCP-Driven Soccer Data Engineering Suite" is a sophisticated data engineering project that leverages Google Cloud Platform's robust capabilities for end-to-end management of soccer statistics. Utilizing Python for data extraction from API Football, the project involves automated workflows for data processing and storage in GCP Cloud Storage. Key features include Cloud Function-triggered data transformation into BigQuery tables and insightful visualization using Tableau. Orchestrated daily by Cloud Composer, this project exemplifies state-of-the-art data pipeline automation and analytics in the cloud.
+"CloudScore Analytics: GCP-Driven Soccer Data Engineering Suite" is a sophisticated data engineering project that leverages Google Cloud Platform's robust capabilities for end-to-end management of soccer statistics. 
+Utilizing Python for data extraction from API Football, the suite introduces a meticulous data cleaning phase, ensuring the highest data quality and integrity. The project involves automated workflows for data processing and storage in GCP Cloud Storage. Employing Google Dataflow, the suite ensures streamlined data transfer to BigQuery tables. Key features include Cloud Function-triggered data transformation into BigQuery tables and insightful visualization using Tableau. Orchestrated daily by Cloud Composer, this project exemplifies state-of-the-art data pipeline automation and analytics in the cloud.
 
 ## Technologies Used
 - Python
