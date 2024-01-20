@@ -1,0 +1,154 @@
+{
+  "BigQuery Schema": [
+    {
+      "name": "Player_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Nationality",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Weight",
+      "type": "FLOAT",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Height",
+      "type": "FLOAT",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Team",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "League",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Appearances",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Lineups",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Minutes",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Goals",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Assists",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Yellow_Cards",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Red_Cards",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Shots_Total",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Shots_On",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Passes_Total",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Key_Passes",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Pass_Accuracy",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Tackles_Total",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Blocks",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Interceptions",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Dribbles_Attempts",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Dribbles_Success",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Fouls_Drawn",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Fouls_Committed",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Duels_Total",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Duels_Won",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Penalty_Scored",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Penalty_Missed",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "Penalty_Saved",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    }
+  ]
+}
