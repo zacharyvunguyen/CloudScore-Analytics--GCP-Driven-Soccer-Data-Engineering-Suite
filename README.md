@@ -47,13 +47,16 @@ To get this project up and running, follow these steps:
    ```
    python Prepare_Dataflow_Parameters.py
    ```
-5. Create & Run Dataflow Job to moves data from Cloud Storage to BigQuery .csv 
+5. Create & Run Dataflow Job to moves data from Cloud Storage to BigQuery 
    1. Set up Dataflow job with parameters
    ![Dataflow_Setup.png](img%2FDataflow_Setup.png)
    ![Dataflow_Setup_1.png](img%2FDataflow_Setup_1.png)
    2. Results
    ![Dataflow_JobGraph.png](img%2FDataflow_JobGraph.png)
    ![BigQuery_Succeeded_Load.png](img%2FBigQuery_Succeeded_Load.png)
+6. Create and Deploy a Google Cloud Function to Automatically Initiate a Dataflow Job upon Detecting New File Uploads to Google Cloud Storage 
+   1. ![CloudFuntions_Setup_1.png](img%2FCloudFuntions_Setup_1.png)
+   2. ![CloudFuntions_Setup_2.png](img%2FCloudFuntions_Setup_2.png)
 ## Visualizations
 Here are some examples of the visualizations created using Tableau:
 ![Visualization Example](link-to-image)
