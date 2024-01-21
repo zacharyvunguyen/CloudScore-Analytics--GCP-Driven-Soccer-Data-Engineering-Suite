@@ -57,6 +57,18 @@ To get this project up and running, follow these steps:
 6. Create and Deploy a Google Cloud Function to Automatically Initiate a Dataflow Job upon Detecting New File Uploads to Google Cloud Storage 
    1. ![CloudFuntions_Setup_1.png](img%2FCloudFuntions_Setup_1.png)
    2. ![CloudFuntions_Setup_2.png](img%2FCloudFuntions_Setup_2.png)
+7. Establish and Deploy a Cloud Composer Environment to Orchestrate the Full Data Pipeline and Schedule Daily Execution
+   1. Set up Cloud Composer Environment
+   ![CloudComposer_Setup_1.png](img%2FCloudComposer_Setup_1.png)
+   2. Run the Python script to upload DAG file to Cloud Storage bucket:
+   ```
+   python Prepare_CloudCompoers_Files.py
+   ```
+   ![Cloud_Composer_DAGs.png](img%2FCloud_Composer_DAGs.png)
+
+
+
+
 ## Visualizations
 Here are some examples of the visualizations created using Tableau:
 ![Visualization Example](link-to-image)
