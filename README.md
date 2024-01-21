@@ -1,5 +1,5 @@
 # CloudScore Analytics: GCP-Driven Soccer Data Engineering Suite
-
+![GCP project.png](img%2FGCP%20project.png)
 ## Introduction
 
 "CloudScore Analytics: GCP-Driven Soccer Data Engineering Suite" is a sophisticated data engineering project that leverages Google Cloud Platform's robust capabilities for end-to-end management of soccer statistics. 
