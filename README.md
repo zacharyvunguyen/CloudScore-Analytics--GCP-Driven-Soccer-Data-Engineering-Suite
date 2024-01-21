@@ -43,12 +43,17 @@ To get this project up and running, follow these steps:
    ```
    python Create_BigQuery_Dataset_and_Table_No_Schema.py
    ```
-4.Run the Python script to create new bucket for dataflow metadata
+4. Run the Python script to create new bucket for dataflow metadata
    ```
    python Prepare_Dataflow_Parameters.py
    ```
-2. [Additional steps related to data processing and visualization]
-
+5. Create & Run Dataflow Job to moves data from Cloud Storage to BigQuery .csv 
+   1. Set up Dataflow job with parameters
+   ![Dataflow_Setup.png](img%2FDataflow_Setup.png)
+   ![Dataflow_Setup_1.png](img%2FDataflow_Setup_1.png)
+   2. Results
+   ![Dataflow_JobGraph.png](img%2FDataflow_JobGraph.png)
+   ![BigQuery_Succeeded_Load.png](img%2FBigQuery_Succeeded_Load.png)
 ## Visualizations
 Here are some examples of the visualizations created using Tableau:
 ![Visualization Example](link-to-image)
