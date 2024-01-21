@@ -43,7 +43,7 @@ To get this project up and running, follow these steps:
    ```
    python Create_BigQuery_Dataset_and_Table_No_Schema.py
    ```
-4.Run the Python script to create BigQuery dataset and table
+4.Run the Python script to create new bucket for dataflow metadata
    ```
    python Prepare_Dataflow_Parameters.py
    ```
