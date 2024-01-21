@@ -35,9 +35,13 @@ To get this project up and running, follow these steps:
    ```
    python Create_Cloud_Storage_Bucket.py
    ```
-1. Run the Python script to fetch the data from API Football, clean it, and store it in Cloud Storage buck:
+2. Run the Python script to fetch the data from API Football, clean it, and store it in Cloud Storage buck:
    ```
-   python extract_data.py
+   python Fetch_API_Football_Data.py
+   ```
+3. Run the Python script to create BigQuery dataset and table
+   ```
+   python Create_BigQuery_Table.py
    ```
 2. [Additional steps related to data processing and visualization]
 
