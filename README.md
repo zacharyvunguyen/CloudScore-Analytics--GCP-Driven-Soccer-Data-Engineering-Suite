@@ -31,41 +31,53 @@ To get this project up and running, follow these steps:
 3. [Further steps regarding setting up GCP services, configuring API keys, etc.]
 
 ## Usage
-1. Run the Python script to create a Cloud Storage bucket:
-   ```
+This suite comprises several steps to automate soccer data management using GCP. Follow these steps to set up the entire workflow:
+
+1. **Initialize Cloud Storage Bucket:**
+   Execute the script to create a new bucket in Cloud Storage.
+   ```bash
    python Create_Cloud_Storage_Bucket.py
    ```
-2. Run the Python script to fetch the data from API Football, clean it, and store it in Cloud Storage buck:
-   ```
+
+2. **Data Extraction and Storage:**
+   Run the script to fetch soccer data from API Football, perform data cleaning, and store the processed data in Cloud Storage.
+   ```bash
    python Fetching_API_Data_to_CloudStorage.py
    ```
-3. Run the Python script to create BigQuery dataset and table
-   ```
+
+3. **BigQuery Dataset and Table Setup:**
+   Create a BigQuery dataset and table using the following script.
+   ```bash
    python Create_BigQuery_Dataset_and_Table_No_Schema.py
    ```
-4. Run the Python script to create new bucket for dataflow metadata
-   ```
+
+4. **Prepare Dataflow Metadata:**
+   Set up the necessary parameters for Dataflow by running:
+   ```bash
    python Prepare_Dataflow_Parameters.py
    ```
-5. Create & Run Dataflow Job to moves data from Cloud Storage to BigQuery 
-   1. Set up Dataflow job with parameters
-   ![Dataflow_Setup.png](img%2FDataflow_Setup.png)
-   ![Dataflow_Setup_1.png](img%2FDataflow_Setup_1.png)
-   2. Results
-   ![Dataflow_JobGraph.png](img%2FDataflow_JobGraph.png)
-   ![BigQuery_Succeeded_Load.png](img%2FBigQuery_Succeeded_Load.png)
-6. Create and Deploy a Google Cloud Function to Automatically Initiate a Dataflow Job upon Detecting New File Uploads to Google Cloud Storage 
-   1. ![CloudFuntions_Setup_1.png](img%2FCloudFuntions_Setup_1.png)
-   2. ![CloudFuntions_Setup_2.png](img%2FCloudFuntions_Setup_2.png)
-7. Establish and Deploy a Cloud Composer Environment to Orchestrate the Full Data Pipeline and Schedule Daily Execution
-   1. Set up Cloud Composer Environment
-   ![CloudComposer_Setup_1.png](img%2FCloudComposer_Setup_1.png)
-   2. Run the Python script to upload DAG file to Cloud Storage bucket:
-   ```
-   python Prepare_CloudCompoers_Files.py
-   ```
-   ![Cloud_Composer_DAGs.png](img%2FCloud_Composer_DAGs.png)
 
+5. **Dataflow Job Execution:**
+   - Configure and initiate a Dataflow job to move data from Cloud Storage to BigQuery.
+     ![Dataflow_Setup.png](img%2FDataflow_Setup.png)
+     ![Dataflow_Setup_1.png](img%2FDataflow_Setup_1.png)
+   - View the results and job graph upon completion.
+     ![Dataflow_JobGraph.png](img%2FDataflow_JobGraph.png)
+     ![BigQuery_Succeeded_Load.png](img%2FBigQuery_Succeeded_Load.png)
+
+6. **Automate Dataflow with Cloud Function:**
+   Deploy a Cloud Function to trigger Dataflow jobs automatically when new files are uploaded to Cloud Storage.
+   ![CloudFuntions_Setup_1.png](img%2FCloudFuntions_Setup_1.png)
+   ![CloudFuntions_Setup_2.png](img%2FCloudFuntions_Setup_2.png)
+
+7. **Orchestrate Data Pipeline with Cloud Composer:**
+   - Set up the Cloud Composer environment to manage and schedule the data pipeline.
+     ![CloudComposer_Setup_1.png](img%2FCloudComposer_Setup_1.png)
+   - Upload the DAG file to Cloud Storage to automate the workflow.
+     ```bash
+     python Prepare_CloudCompoers_Files.py
+     ```
+     ![Cloud_Composer_DAGs.png](img%2FCloud_Composer_DAGs.png)
 
 
 
