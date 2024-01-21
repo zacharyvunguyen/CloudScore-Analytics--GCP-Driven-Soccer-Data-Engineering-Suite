@@ -31,7 +31,11 @@ To get this project up and running, follow these steps:
 3. [Further steps regarding setting up GCP services, configuring API keys, etc.]
 
 ## Usage
-1. Run the Python script to initiate data extraction:
+1. Run the Python script to create a Cloud Storage bucket:
+   ```
+   python Create_Cloud_Storage_Bucket.py
+   ```
+1. Run the Python script to fetch the data from API Football, clean it, and store it in Cloud Storage buck:
    ```
    python extract_data.py
    ```
