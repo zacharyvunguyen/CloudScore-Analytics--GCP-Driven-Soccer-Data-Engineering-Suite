@@ -79,11 +79,11 @@ This suite comprises several steps to automate soccer data management using GCP.
      ```
      ![Cloud_Composer_DAGs.png](img%2FCloud_Composer_DAGs.png)
 
-
-
 ## Visualizations
-Here are some examples of the visualizations created using Tableau:
-![Visualization Example](link-to-image)
+BigQuery to Tableau Connection:
+![Tableau_BigQuery.png](img%2FTableau_BigQuery.png)
+Tableau Dashboard:
+
 
 ## Contributions and Feedback
 Contributions to this project are welcome! Feel free to fork the repository and submit pull requests. For any feedback or issues, please open an issue in the repository.
