@@ -2,20 +2,29 @@
 ![GCP project.png](img%2FGCP%20project.png)
 ## Introduction
 
-"CloudScore Analytics: GCP-Driven Soccer Data Engineering Suite" is a sophisticated data engineering project that leverages Google Cloud Platform's robust capabilities for end-to-end management of soccer statistics. 
+"CloudScore Analytics: GCP-Driven Soccer Data Engineering Suite" is a sophisticated data engineering project that leverages Google Cloud Platform's robust capabilities for end-to-end management of soccer statistics.
 Utilizing Python for data extraction from API Football, the suite introduces a meticulous data cleaning phase, ensuring the highest data quality and integrity. The project involves automated workflows for data processing and storage in GCP Cloud Storage. Employing Google Dataflow, the suite ensures streamlined data transfer to BigQuery tables. Key features include Cloud Function-triggered data transformation into BigQuery tables and insightful visualization using Tableau. Orchestrated daily by Cloud Composer, this project exemplifies state-of-the-art data pipeline automation and analytics in the cloud.
 
 ## Technologies Used
+
 - Python
-- Google Cloud Platform (Cloud Storage, Cloud Functions, Dataflow, BigQuery, Cloud Composer)
+- Google Cloud Platform (GCP) components:
+  - Cloud Storage
+  - Cloud Functions
+  - Dataflow
+  - BigQuery
+  - Cloud Composer
 - Tableau for Visualization
 - API Football for Data Source
 
 ## Features
-- Automated data extraction from API Football
-- Data transformation and storage using GCP services
-- Daily orchestrated data pipeline runs
-- Interactive data visualizations in Tableau
+
+- **Automated Data Extraction**: Seamlessly pull data from API Football.
+- **GCP-Powered Transformation and Storage**: Leverage GCP services for efficient data handling.
+- **Daily Orchestrated Data Pipeline Runs**: Ensure consistent data flow with Cloud Composer.
+- **Interactive Tableau Visualizations**: Create dynamic visual representations of data.
+
+
 
 ## Setup and Installation
 To get this project up and running, follow these steps:
@@ -23,12 +32,7 @@ To get this project up and running, follow these steps:
    ```
    git clone [your-repo-link]
    cd [repository-name]
-   ```
-2. Install required Python packages:
-   ```
-   pip install -r requirements.txt
-   ```
-3. [Further steps regarding setting up GCP services, configuring API keys, etc.]
+2. [Further steps regarding setting up GCP services, configuring API keys, etc.]
 
 ## Usage
 This suite comprises several steps to automate soccer data management using GCP. Follow these steps to set up the entire workflow:
@@ -83,13 +87,5 @@ This suite comprises several steps to automate soccer data management using GCP.
 BigQuery to Tableau Connection:
 ![Tableau_BigQuery.png](img%2FTableau_BigQuery.png)
 Tableau Dashboard:
+![Tableau Dashboard.png](img%2FTableau%20Dashboard.png)
 
-
-## Contributions and Feedback
-Contributions to this project are welcome! Feel free to fork the repository and submit pull requests. For any feedback or issues, please open an issue in the repository.
-
-## License
-This project is licensed under the [MIT License](LICENSE.md).
-
-## Contact
-For any queries, feel free to contact me at [your-email@example.com].
