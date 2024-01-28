@@ -30,8 +30,8 @@ Utilizing Python for data extraction from API Football, the suite introduces a m
 To get this project up and running, follow these steps:
 1. Clone the repository:
    ```
-   git clone [your-repo-link]
-   cd [repository-name]
+   git clone [https://github.com/zacharyvunguyen/CloudScore-Analytics--GCP-Driven-Soccer-Data-Engineering-Suite.git]
+   cd [CloudScore-Analytics--GCP-Driven-Soccer-Data-Engineering-Suite]
 2. [Further steps regarding setting up GCP services, configuring API keys, etc.]
 
 ## Usage
