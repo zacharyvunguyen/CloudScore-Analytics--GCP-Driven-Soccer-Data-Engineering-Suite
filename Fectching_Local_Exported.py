@@ -1,19 +1,29 @@
 import requests
 import pandas as pd
 import numpy as np
-from google.cloud import storage
+import os
 
-def fetch_data():
+def fetch_data(team_id, league_id, season_year):
     url = "https://api-football-v1.p.rapidapi.com/v3/players"
-    querystring = {"team": "50", "league": "39", "season": "2022"}
+    querystring = {"team": team_id, "league": league_id, "season": season_year}
     headers = {
         "X-RapidAPI-Key": "b01fb7d4d5msh9d6010d034fce6bp136078jsnfe71045ac5ee",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
     }
-    response = requests.get(url, headers=headers, params=querystring)
-    return response.json()
+
+    try:
+        response = requests.get(url, headers=headers, params=querystring)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Error fetching data: {e}")
+        return None
 
 def process_data(data):
+    if not data or 'response' not in data:
+        print("Invalid data or empty response.")
+        return pd.DataFrame()
+
     players_data = []
     for player in data['response']:
         player_info = player['player']
@@ -56,56 +66,53 @@ def process_data(data):
     return pd.DataFrame(players_data)
 
 def clean_and_transform_data(df):
-
-    # Drop unnecessary columns
     df = df.drop(['Position', 'Dribbled Past'], axis=1)
-
-    # Cleaning Weight column
-    # Remove 'kg' and convert 'none' to NaN, then convert to numeric
-    df['Weight'] = df['Weight'].str.replace(' kg', '').str.replace('kg', '')
-    df['Weight'].replace('none', np.nan, inplace=True)
+    df['Weight'] = df['Weight'].str.replace(' kg', '').str.replace('kg', '').replace('none', np.nan)
     df['Weight'] = pd.to_numeric(df['Weight'], errors='coerce')
-
-    # Calculate the average weight and replace NaN values with it
     average_weight = df['Weight'].dropna().mean()
     df['Weight'].fillna(average_weight, inplace=True)
 
-    # Cleaning Height column
-    # Remove 'cm' and convert 'none' to NaN, then convert to numeric
-    df['Height'] = df['Height'].str.replace(' cm', '').str.replace('cm', '')
-    df['Height'].replace('none', np.nan, inplace=True)
+    df['Height'] = df['Height'].str.replace(' cm', '').str.replace('cm', '').replace('none', np.nan)
     df['Height'] = pd.to_numeric(df['Height'], errors='coerce')
-
-    # Calculate the average height and replace NaN values with it
     average_height = df['Height'].dropna().mean()
     df['Height'].fillna(average_height, inplace=True)
 
-    # Replace all other NaN values in the DataFrame with 0
     df.fillna(0, inplace=True)
-
-
     return df
 
-def upload_to_gcs(df, bucket_name, destination_blob_name):
-    storage_client = storage.Client()
-    bucket = storage_client.bucket(bucket_name)
-    blob = bucket.blob(destination_blob_name)
+def save_to_local(df, local_folder, file_name):
+    if not os.path.exists(local_folder):
+        os.makedirs(local_folder)
 
-    # Save DataFrame to a CSV on memory
-    df.to_csv(destination_blob_name, index=False,header=False)
+    file_path = os.path.join(local_folder, file_name)
+    df.to_csv(file_path, index=False, header=False)
+    print(f"File {file_path} saved locally.")
 
-    # Upload the CSV to GCS
-    blob.upload_from_filename(destination_blob_name)
-    print(f"File {destination_blob_name} uploaded to {bucket_name}.")
+def validate_input(input_str, input_type):
+    try:
+        if input_type == 'int':
+            return int(input_str)
+        return str(input_str)
+    except ValueError:
+        print(f"Invalid input for {input_type}. Please try again.")
+        return None
 
 def main():
-    """
-    Main function to orchestrate data fetching, processing, and uploading.
-    """
-    data = fetch_data()
-    df = process_data(data)
-    df_cleaned = clean_and_transform_data(df)
-    upload_to_gcs(df_cleaned, "2024test", "players_data.csv")
+    team_id = validate_input(input("Enter team ID: "), 'int')
+    league_id = validate_input(input("Enter league ID: "), 'int')
+    season_year = validate_input(input("Enter season year: "), 'int')
+
+    if team_id is None or league_id is None or season_year is None:
+        print("Invalid inputs provided.")
+        return
+
+    data = fetch_data(team_id, league_id, season_year)
+    if data:
+        df = process_data(data)
+        if not df.empty:
+            df_cleaned = clean_and_transform_data(df)
+            file_name = f"players_data_team_{team_id}_league_{league_id}_season_{season_year}.csv"
+            save_to_local(df_cleaned, "local_exported_csv", file_name)
 
 if __name__ == "__main__":
     main()
